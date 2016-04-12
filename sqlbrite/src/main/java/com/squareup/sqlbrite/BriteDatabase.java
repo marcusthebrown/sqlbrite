@@ -17,14 +17,17 @@ package com.squareup.sqlbrite;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteTransactionListener;
 import android.support.annotation.CheckResult;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+
 import com.squareup.sqlbrite.SqlBrite.Query;
+
+import org.sqlite.database.sqlite.SQLiteDatabase;
+import org.sqlite.database.sqlite.SQLiteOpenHelper;
+import org.sqlite.database.sqlite.SQLiteTransactionListener;
+
 import java.io.Closeable;
 import java.lang.annotation.Retention;
 import java.util.Arrays;
@@ -32,21 +35,22 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
 import rx.Observable;
 import rx.Scheduler;
 import rx.functions.Action0;
 import rx.functions.Func1;
 import rx.subjects.PublishSubject;
 
-import static android.database.sqlite.SQLiteDatabase.CONFLICT_ABORT;
-import static android.database.sqlite.SQLiteDatabase.CONFLICT_FAIL;
-import static android.database.sqlite.SQLiteDatabase.CONFLICT_IGNORE;
-import static android.database.sqlite.SQLiteDatabase.CONFLICT_NONE;
-import static android.database.sqlite.SQLiteDatabase.CONFLICT_REPLACE;
-import static android.database.sqlite.SQLiteDatabase.CONFLICT_ROLLBACK;
 import static java.lang.System.nanoTime;
 import static java.lang.annotation.RetentionPolicy.SOURCE;
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
+import static org.sqlite.database.sqlite.SQLiteDatabase.CONFLICT_ABORT;
+import static org.sqlite.database.sqlite.SQLiteDatabase.CONFLICT_FAIL;
+import static org.sqlite.database.sqlite.SQLiteDatabase.CONFLICT_IGNORE;
+import static org.sqlite.database.sqlite.SQLiteDatabase.CONFLICT_NONE;
+import static org.sqlite.database.sqlite.SQLiteDatabase.CONFLICT_REPLACE;
+import static org.sqlite.database.sqlite.SQLiteDatabase.CONFLICT_ROLLBACK;
 
 /**
  * A lightweight wrapper around {@link SQLiteOpenHelper} which allows for continuously observing

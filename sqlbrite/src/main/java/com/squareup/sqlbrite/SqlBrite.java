@@ -17,7 +17,7 @@ package com.squareup.sqlbrite;
 
 import android.content.ContentResolver;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteOpenHelper;
+import org.sqlite.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.CheckResult;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
